@@ -29,7 +29,7 @@ public class AdapterDataDashboard extends RecyclerView.Adapter<AdapterDataDashbo
     @NonNull
     @Override
     public HolderData onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View layout = LayoutInflater.from(parent.getContext()).inflate(R.layout.dashboard_card,parent,false);
+        View layout = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_dashboard,parent,false);
         HolderData holder = new HolderData(layout);
         return holder;
     }

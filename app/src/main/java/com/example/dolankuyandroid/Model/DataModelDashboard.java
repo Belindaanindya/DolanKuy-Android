@@ -19,8 +19,8 @@ private String address;
 @SerializedName("description")
 private String description;
 
-//@SerializedName("image")
-//private String image;
+@SerializedName("image")
+private String image;
 
 @SerializedName("contact")
 private String contact;

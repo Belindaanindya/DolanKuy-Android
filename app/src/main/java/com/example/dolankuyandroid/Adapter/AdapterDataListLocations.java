@@ -30,7 +30,7 @@ public class AdapterDataListLocations extends RecyclerView.Adapter<AdapterDataLi
     @NonNull
     @Override
     public HolderData onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View layout = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_listwisata,parent,false);
+        View layout = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_list_wisata,parent,false);
         HolderData holder = new HolderData(layout);
         return holder;
     }
