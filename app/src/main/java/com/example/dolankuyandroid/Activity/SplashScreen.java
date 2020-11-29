@@ -7,12 +7,12 @@ import android.os.Bundle;
 
 import com.example.dolankuyandroid.R;
 
-public class SplashScreen2 extends AppCompatActivity {
+public class SplashScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_screen2);
+        setContentView(R.layout.activity_splash_screen);
 
         Thread thread= new Thread(){
             public void run(){
@@ -22,7 +22,7 @@ public class SplashScreen2 extends AppCompatActivity {
                 } catch (InterruptedException e){
                     e.printStackTrace();
                 } finally {
-                    Intent goToMainActivity = new Intent(SplashScreen2.this, SplashScreenActivity.class);
+                    Intent goToMainActivity = new Intent(SplashScreen.this, WelcomeActivity.class);
                     startActivity(goToMainActivity);
                     finish();
                 }

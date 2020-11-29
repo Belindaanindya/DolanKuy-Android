@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sign_in);
+        setContentView(R.layout.activity_sign_in);
 
 //        if (Preferences.getLoggedInStatus(getBaseContext())){
 //            startActivity(new Intent(getBaseContext(), HomeActivity.class));

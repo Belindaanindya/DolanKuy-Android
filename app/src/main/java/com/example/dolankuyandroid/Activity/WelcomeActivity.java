@@ -8,18 +8,17 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.dolankuyandroid.Fragment.DashboardFragment;
 import com.example.dolankuyandroid.Preferences.Preferences;
 import com.example.dolankuyandroid.R;
 
-public class SplashScreenActivity extends AppCompatActivity {
+public class WelcomeActivity extends AppCompatActivity {
     Button signInBtn;
     Button signUpBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash_screen);
+        setContentView(R.layout.activity_welcome_screen);
 
         signInBtn = findViewById(R.id.SignInButton);
         signInBtn.setOnClickListener(new View.OnClickListener() {

@@ -19,13 +19,13 @@
         >
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/welcome_user"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
-            android:padding="10dp"
+            android:padding="15dp"
             android:text="Welcome, "
             android:textSize="20sp"
             android:layout_gravity="center"
@@ -57,9 +57,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView"
             >
-
-
-
 
 
             <LinearLayout

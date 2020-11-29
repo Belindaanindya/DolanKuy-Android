@@ -27,6 +27,8 @@ public class Preferences {
         return getSharedPreference(context).getString(KEY_PASSWORD, "");
     }
 
+
+
     public static void setLoggedInUser(Context context, String username){
         SharedPreferences.Editor editor = getSharedPreference(context).edit();
         editor.putString(KEY_USERNAME, username);

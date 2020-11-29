@@ -17,11 +17,11 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.dolankuyandroid.API.APIRequestData;
 import com.example.dolankuyandroid.API.RetroServer;
 import com.example.dolankuyandroid.Activity.LoginActivity;
-import com.example.dolankuyandroid.Activity.ProfileActivity;
 import com.example.dolankuyandroid.Model.ResponseLogout;
+import com.example.dolankuyandroid.Model.ResponseUser;
+import com.example.dolankuyandroid.Model.User;
 import com.example.dolankuyandroid.Preferences.Preferences;
 import com.example.dolankuyandroid.R;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,11 +32,19 @@ public class ProfileFragment extends Fragment {
     private View view;
     private Button btn_logout;
     private Button btn_editProfile;
+    private User credentials;
+    private TextView tv_username;
+    private TextView tv_email;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.activity_profile, container, false);
+
+        tv_email = view.findViewById(R.id.email_profile);
+        tv_username = view.findViewById(R.id.username_profile);
+
+        getDetailUser();
 
         btn_logout = view.findViewById(R.id.bt_logout);
         btn_logout.setOnClickListener(new View.OnClickListener() {
@@ -50,9 +58,6 @@ public class ProfileFragment extends Fragment {
         btn_editProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                v = inflater.inflate(R.layout.navigation_bottom, container, false);
-                TextView textView = v.findViewById(R.id.title);
-                textView.setText("Edit Profile");
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.botNav_container, new EditProfileFragment());
                 fragmentTransaction.commit();
@@ -63,6 +68,40 @@ public class ProfileFragment extends Fragment {
     }
 
 
+    private void getDetailUser() {
+
+        APIRequestData apiRequestData = RetroServer.konekRetrofit().create(APIRequestData.class);
+        Call<ResponseUser> responseUserCall = apiRequestData.ardUser(
+                "Bearer" + Preferences.getKeyToken(view.getContext())
+        );
+
+        responseUserCall.enqueue(new Callback<ResponseUser>() {
+            @Override
+            public void onResponse(Call<ResponseUser> call, Response<ResponseUser> response) {
+
+                if(!response.body().getUsers().getName().isEmpty()) {
+
+                    credentials = response.body().getUsers();
+                    tv_email.setText(credentials.getEmail());
+                    tv_username.setText(credentials.getName());
+                    Toast.makeText(view.getContext(), "Token is valid", Toast.LENGTH_SHORT).show();
+
+                } else {
+
+                    Toast.makeText(view.getContext(), "Token is Invalid", Toast.LENGTH_SHORT).show();
+                    Preferences.setStatus(view.getContext(), "false");
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseUser> call, Throwable t) {
+                Toast.makeText(view.getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
 
     private void onLogout() {
 
@@ -87,7 +126,7 @@ public class ProfileFragment extends Fragment {
 
             @Override
             public void onFailure(Call<ResponseLogout> call, Throwable t) {
-
+                Toast.makeText(view.getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 

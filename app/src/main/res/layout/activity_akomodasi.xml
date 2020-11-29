@@ -15,6 +15,7 @@
         android:background="@drawable/line_shape_corner">
     </SearchView>
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
