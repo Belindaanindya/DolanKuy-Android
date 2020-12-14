@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="montserratfont" parent="@android:style/TextAppearance.Small">
+<!--        <item name="android:fontFamily">@font/montserrat_semi_bold</item>-->
+<!--        <item name="android:fontFamily">@font/montserrat_bold</item>-->
+<!--        <item name="android:fontFamily">@font/montserrat_italic</item>-->
+<!--        <item name="android:fontFamily">@font/montserrat_regular</item>-->
+<!--        <item name="android:fontFamily">@font/montserrat_medium</item>-->
+    </style>
+</resources>

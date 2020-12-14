@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,8 @@ import com.example.dolankuyandroid.Model.ResponseUser;
 import com.example.dolankuyandroid.Model.User;
 import com.example.dolankuyandroid.Preferences.Preferences;
 import com.example.dolankuyandroid.R;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +43,9 @@ public class DashboardFragment extends Fragment {
     private User credentials;
     private View view;
     private TextView tv_welcome;
+    CarouselView carouselView;
+    int[] sampleImages = {R.drawable.singapore, R.drawable.avatar, R.drawable.sate};
+
 
     @Nullable
     @Override
@@ -47,15 +53,29 @@ public class DashboardFragment extends Fragment {
         view = inflater.inflate(R.layout.activivty_dashboard, container, false);
 
         rvData = view.findViewById(R.id.recycleViewData);
-        tv_welcome = view.findViewById(R.id.welcome_user);
         lmData = new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false);
         GridLayoutManager glManager = new GridLayoutManager(view.getContext(),2,GridLayoutManager.VERTICAL, false);
         rvData.setLayoutManager(lmData);
         rvData.setLayoutManager(glManager);
 
+
+        carouselView =  view.findViewById(R.id.carouselView);
+        carouselView.setPageCount(sampleImages.length);
+        carouselView.setImageListener(new ImageListener() {
+            @Override
+            public void setImageForPosition(int position, ImageView imageView) {
+                imageView.setImageResource(sampleImages[position]);
+            }
+        });
+
         getDetailUser();
+        //carousel();
         locationWisataDashboard();
         return view;
+    }
+
+    private void carousel() {
+
     }
 
     private void getDetailUser() {
@@ -74,8 +94,6 @@ public class DashboardFragment extends Fragment {
                     credentials = response.body().getUsers();
 
                     Preferences.setStatus(view.getContext(), "true");
-
-                    tv_welcome.setText("Welcome, " + credentials.getName());
 
                     Toast.makeText(view.getContext(), "Token is valid", Toast.LENGTH_SHORT).show();
 

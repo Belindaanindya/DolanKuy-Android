@@ -56,7 +56,7 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.botNav_container, new AcomodationFragment(), idKuliner);
+                fragmentTransaction.replace(R.id.frameLayout, new AcomodationFragment(), idKuliner);
                 fragmentTransaction.commit();
             }
         });
@@ -65,7 +65,7 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.botNav_container, new AcomodationFragment(), idSPBU);
+                fragmentTransaction.replace(R.id.frameLayout, new AcomodationFragment(), idSPBU);
                 fragmentTransaction.commit();
             }
         });
@@ -74,7 +74,7 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.botNav_container, new AcomodationFragment(), idMarket);
+                fragmentTransaction.replace(R.id.frameLayout, new AcomodationFragment(), idMarket);
                 fragmentTransaction.commit();
             }
         });
@@ -83,7 +83,7 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.botNav_container, new AcomodationFragment(), idTempatIbadah);
+                fragmentTransaction.replace(R.id.frameLayout, new AcomodationFragment(), idTempatIbadah);
                 fragmentTransaction.commit();
             }
         });

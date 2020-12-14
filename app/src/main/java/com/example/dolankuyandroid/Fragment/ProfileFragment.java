@@ -59,7 +59,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.botNav_container, new EditProfileFragment());
+                fragmentTransaction.replace(R.id.frameLayout, new EditProfileFragment());
                 fragmentTransaction.commit();
             }
         });

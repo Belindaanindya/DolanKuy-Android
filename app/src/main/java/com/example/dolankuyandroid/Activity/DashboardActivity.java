@@ -1,6 +1,5 @@
 package com.example.dolankuyandroid.Activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -24,13 +23,13 @@ public class DashboardActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.navigation_bottom);
+        setContentView(R.layout.navigation_bar);
 
         BottomNavigationView botNavView = findViewById(R.id.bottom_navigation);
         botNavView.setOnNavigationItemSelectedListener(navListener);
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.botNav_container, new DashboardFragment());
+        fragmentTransaction.replace(R.id.frameLayout, new DashboardFragment());
         fragmentTransaction.commit();
 
         textView = findViewById(R.id.title);
@@ -68,7 +67,7 @@ public class DashboardActivity extends AppCompatActivity {
                     break;
             }
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.botNav_container,
+            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
                     selectedFragment).commit();
             return true;
         }
