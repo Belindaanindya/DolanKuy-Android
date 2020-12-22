@@ -13,9 +13,6 @@
         android:layout_marginBottom="0dp" >
     </FrameLayout>
 
-
-
-
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"

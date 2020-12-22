@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.dolankuyandroid.Activity.DetailListLocationsActivity;
 import com.example.dolankuyandroid.Model.DataModelDashboard;
 import com.example.dolankuyandroid.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -43,6 +45,9 @@ public class AdapterDataListLocations extends RecyclerView.Adapter<AdapterDataLi
         holder.nameListWisata1.setText(dmDashboard.getName());
         holder.distanceListWisata1.setText(String.valueOf(dmDashboard.getDistance()));
         holder.locationListWisataBtn1.setText(dmDashboard.getAddress());
+        Picasso.get()
+                .load("http://192.168.1.10/DolanKuy-backend/DolanKuy-backend/public/storage/dolankuy/"+ dmDashboard.getImage())
+                .into(holder.imageView);
     }
 
     @Override
@@ -55,6 +60,7 @@ public class AdapterDataListLocations extends RecyclerView.Adapter<AdapterDataLi
         TextView distanceListWisata1;
         TextView idListWisata1;
         Button locationListWisataBtn1;
+        ImageView imageView;
 
 
         @SuppressLint("ResourceType")
@@ -65,6 +71,7 @@ public class AdapterDataListLocations extends RecyclerView.Adapter<AdapterDataLi
             nameListWisata1 = itemView.findViewById(R.id.nameListWisata1);
             distanceListWisata1 = itemView.findViewById(R.id.distanceListWisata1);
             locationListWisataBtn1 = itemView.findViewById(R.id.locationListWisataBtn1);
+            imageView = itemView.findViewById(R.id.imgListWisata1);
 
             itemView.setOnClickListener(this);
         }

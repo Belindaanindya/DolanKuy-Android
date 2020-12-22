@@ -106,7 +106,7 @@ public class LoginActivity extends AppCompatActivity {
                        responseLogin  = response.body();
 
                        Preferences.setKeyToken(getBaseContext(), responseLogin.getToken());
-
+                       Preferences.setStatus(getBaseContext(), "true");
                        Toast.makeText(getBaseContext(), "login is successful", Toast.LENGTH_SHORT).show();
 
                        startActivity(new Intent(LoginActivity.this, DashboardActivity.class));

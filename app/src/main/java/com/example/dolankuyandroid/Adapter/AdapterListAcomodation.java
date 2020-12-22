@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.dolankuyandroid.Activity.DetailListLocationsActivity;
 import com.example.dolankuyandroid.Model.DataModelDashboard;
 import com.example.dolankuyandroid.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -41,6 +43,9 @@ public class AdapterListAcomodation extends RecyclerView.Adapter<AdapterListAcom
 
         holder.idListAcomodation.setText(String.valueOf(dmDashboard.getId()));
         holder.nameListAcomodation.setText(dmDashboard.getName());
+        Picasso.get()
+                .load("http://192.168.1.10/DolanKuy-backend/DolanKuy-backend/public/storage/dolankuy/"+ dmDashboard.getImage())
+                .into(holder.imageView);
     }
 
     @Override
@@ -51,6 +56,7 @@ public class AdapterListAcomodation extends RecyclerView.Adapter<AdapterListAcom
     public class HolderData extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView nameListAcomodation;
         TextView idListAcomodation;
+        ImageView imageView;
 
 
         @SuppressLint("ResourceType")
@@ -59,6 +65,7 @@ public class AdapterListAcomodation extends RecyclerView.Adapter<AdapterListAcom
 
             idListAcomodation = itemView.findViewById(R.id.idAkomodasi);
             nameListAcomodation = itemView.findViewById(R.id.nameAkomodasi);
+            imageView = itemView.findViewById(R.id.imageAkomodasi);
 
             itemView.setOnClickListener(this);
         }

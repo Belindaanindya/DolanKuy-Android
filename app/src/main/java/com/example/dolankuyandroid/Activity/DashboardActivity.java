@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.dolankuyandroid.Fragment.AcomodationFragment;
 import com.example.dolankuyandroid.Fragment.CategoryFragment;
 import com.example.dolankuyandroid.Fragment.DashboardFragment;
 import com.example.dolankuyandroid.Fragment.ListLocationsFragment;
@@ -18,7 +19,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    TextView textView;
+    private TextView textView;
+    private Fragment selectedFragment = null;
+    private int tmp = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,9 +30,10 @@ public class DashboardActivity extends AppCompatActivity {
 
         BottomNavigationView botNavView = findViewById(R.id.bottom_navigation);
         botNavView.setOnNavigationItemSelectedListener(navListener);
+        selectedFragment = new DashboardFragment();
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, new DashboardFragment());
+        fragmentTransaction.replace(R.id.frameLayout, selectedFragment);
         fragmentTransaction.commit();
 
         textView = findViewById(R.id.title);
@@ -40,35 +44,59 @@ public class DashboardActivity extends AppCompatActivity {
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment selectedFragment = null;
+
 
             switch (item.getItemId()){
                 case R.id.home_botNav:
-                    selectedFragment = new DashboardFragment();
-                    overridePendingTransition(0, 0);
-                    textView.setText("Dashboard");
+                    if(tmp != 0) {
+                        selectedFragment = new DashboardFragment();
+                        overridePendingTransition(0, 0);
+                        textView.setText("Dashboard");
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
+                                selectedFragment).commit();
+                        tmp = 0;
+                        break;
+                    }
                     break;
+
                 case R.id.listWisata_botNav:
-                    selectedFragment = new ListLocationsFragment();
-                    overridePendingTransition(0,0);
-                    textView.setText("List Wisata");
+                    if(tmp != 1) {
+                        selectedFragment = new ListLocationsFragment();
+                        overridePendingTransition(0, 0);
+                        textView.setText("List Wisata");
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
+                                selectedFragment).commit();
+                        tmp = 1;
+                        break;
+                    }
                     break;
 
                 case R.id.akomodasi_botNav:
-                    selectedFragment = new CategoryFragment();
-                    overridePendingTransition(0,0);
-                    textView.setText("Akomodasi");
+                    if(tmp != 2) {
+                        selectedFragment = new CategoryFragment();
+                        overridePendingTransition(0, 0);
+                        textView.setText("Akomodasi");
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
+                                selectedFragment).commit();
+                        tmp = 2;
+                        break;
+                    }
                     break;
 
                 case R.id.profile_botNav:
-                    selectedFragment = new ProfileFragment();
-                    overridePendingTransition(0,0);
-                    textView.setText("Profile");
+                    if(tmp != 3) {
+                        selectedFragment = new ProfileFragment();
+                        overridePendingTransition(0, 0);
+                        textView.setText("My Profile");
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
+                                selectedFragment).commit();
+                        tmp = 3;
+                        break;
+                    }
                     break;
             }
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
-                    selectedFragment).commit();
+            
             return true;
         }
     };

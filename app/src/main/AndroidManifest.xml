@@ -11,18 +11,32 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".Activity.SplashScreen">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCiwAU49NxVQU14Bx7kWE7gvzDFYwfGOCI">
+
+        </meta-data>
+
+        <activity android:name=".Activity.SplashScreen"
+            android:screenOrientation="portrait"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.WelcomeActivity"></activity>
-        <activity android:name=".Activity.LoginActivity"/>
-        <activity android:name=".Activity.RegisterActivity"/>
-        <activity android:name=".Activity.DashboardActivity" />
-        <activity android:name=".Activity.DetailListLocationsActivity" />
+        <activity android:name=".Activity.WelcomeActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".Activity.LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Activity.RegisterActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Activity.DashboardActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Activity.DetailListLocationsActivity"
+            android:screenOrientation="portrait"/>
 
 
     </application>

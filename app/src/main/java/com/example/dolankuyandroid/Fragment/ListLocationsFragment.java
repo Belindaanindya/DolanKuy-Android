@@ -60,10 +60,12 @@ public class ListLocationsFragment extends Fragment {
         tampilData.enqueue(new Callback<ResponseModelListLocations>() {
             @Override
             public void onResponse(Call<ResponseModelListLocations> call, Response<ResponseModelListLocations> response) {
-                listData = response.body().getLocations();
-                adData = new AdapterDataListLocations(view.getContext(), listData);
-                rvData.setAdapter(adData);
-                adData.notifyDataSetChanged();
+                if (response.isSuccessful()) {
+                    listData = response.body().getLocations();
+                    adData = new AdapterDataListLocations(view.getContext(), listData);
+                    rvData.setAdapter(adData);
+                    adData.notifyDataSetChanged();
+                }
             }
 
             @Override
