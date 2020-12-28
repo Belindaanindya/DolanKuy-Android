@@ -54,6 +54,7 @@ public class DetailListLocationsActivity extends AppCompatActivity {
     private ImageButton btn_direction;
     private LinearLayout linearLayout;
     private FrameLayout frameLayout;
+    private String distance="";
     //TextView tvDescription;
     //TextView tvAddress;
     //TextView tvContact;
@@ -71,9 +72,11 @@ public class DetailListLocationsActivity extends AppCompatActivity {
         btn_direction = findViewById(R.id.bt_direction);
         tvId = findViewById(R.id.tv_id_detail);
         id = intent.getStringExtra("id");
+        distance = intent.getStringExtra("distance");
         tvTitle = findViewById(R.id.tv_title);
         tvDistance = findViewById(R.id.tv_distance);
         linearLayout = findViewById(R.id.gmaps_layout);
+        btn_direction.setVisibility(View.GONE);
         //tvDescription = findViewById(R.id.tv_description);
         //tvContact = findViewById(R.id.tv_contact);
         //tvAddress = findViewById(R.id.tv_address);
@@ -112,7 +115,7 @@ public class DetailListLocationsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 linearLayout.setVisibility(v.VISIBLE);
-                frameLayout.setVisibility(v.GONE);
+                //frameLayout.setVisibility(v.GONE);
             }
         });
     }
@@ -129,10 +132,12 @@ public class DetailListLocationsActivity extends AppCompatActivity {
                     //if(tmp != 0) {
                         selectedFragment = new DetailsFragment(id);
                         overridePendingTransition(0, 0);
-                        linearLayout.setVisibility(View.GONE);
-                        frameLayout.setVisibility(View.VISIBLE);
+                        linearLayout.setVisibility(View.VISIBLE);
+                        //frameLayout.setVisibility(View.VISIBLE);
+                    //detailListLocationWisata();
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_details,
                                 selectedFragment).commit();
+
                         tmp = 0;
                         //break;
                     //}
@@ -143,7 +148,7 @@ public class DetailListLocationsActivity extends AppCompatActivity {
                         selectedFragment = new GaleryFragment();
                         overridePendingTransition(0, 0);
                         linearLayout.setVisibility(View.GONE);
-                        frameLayout.setVisibility(View.VISIBLE);
+                        //frameLayout.setVisibility(View.VISIBLE);
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_details,
                                 selectedFragment).commit();
                         tmp = 1;
@@ -169,7 +174,7 @@ public class DetailListLocationsActivity extends AppCompatActivity {
                 detailLocations = response.body().getDetail_location();
                 tvId.setText(String.valueOf(detailLocations.getId()));
                 tvTitle.setText(detailLocations.getName());
-                tvDistance.setText(String.valueOf(detailLocations.getDistance()));
+                tvDistance.setText(distance);
                 Picasso.get()
                         .load("http://192.168.1.10/DolanKuy-backend/DolanKuy-backend/public/storage/dolankuy/"+ detailLocations.getImage())
                         .into(ivDetailImage);
@@ -186,7 +191,7 @@ public class DetailListLocationsActivity extends AppCompatActivity {
                         MarkerOptions markerOptions = new MarkerOptions().position(latLng)
                                 .title(detailLocations.getName());
 
-                        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
+                        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
                         googleMap.addMarker(markerOptions);
 
                     }

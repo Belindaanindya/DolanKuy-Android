@@ -36,6 +36,18 @@
                 app:srcCompat="@drawable/sate" />
 
             <TextView
+                android:id="@+id/distance_akomodasi"
+                android:layout_width="wrap_content"
+                android:padding="10dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/gradation_background_black"
+                android:text="30 Km"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <TextView
                 android:id="@+id/nameAkomodasi"
                 android:layout_width="match_parent"
                 android:padding="10dp"

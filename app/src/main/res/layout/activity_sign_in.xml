@@ -151,7 +151,22 @@
                 android:text="Register"
                 android:textColor="@color/orange"
                 android:textStyle="bold" />
+
+
+
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_skip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Skip ?"
+            android:textColor="@color/orange"
+            android:textStyle="bold" />
 
         <ProgressBar
             android:id="@+id/pb_signIn"

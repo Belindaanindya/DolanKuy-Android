@@ -32,7 +32,9 @@ private double latitude;
 private double longitude;
 
 @SerializedName("distance")
-private int distance;
+private double distance;
+
+
 
     public int getId() {
         return id;
@@ -106,11 +108,11 @@ private int distance;
         this.longitude = longitude;
     }
 
-    public int getDistance() {
+    public double getDistance() {
         return distance;
     }
 
-    public void setDistance(int distance) {
+    public void setDistance(double distance) {
         this.distance = distance;
     }
 }

@@ -18,6 +18,7 @@ import com.example.dolankuyandroid.Model.DataModelDashboard;
 import com.example.dolankuyandroid.R;
 import com.squareup.picasso.Picasso;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class AdapterDataDashboard extends RecyclerView.Adapter<AdapterDataDashboard.HolderData> {
@@ -40,9 +41,11 @@ public class AdapterDataDashboard extends RecyclerView.Adapter<AdapterDataDashbo
     @Override
     public void onBindViewHolder(@NonNull HolderData holder, int position) {
         DataModelDashboard dmDashboard = listWisataDashboard.get(position);
+        float distance = (float) dmDashboard.getDistance();
 
         holder.tvId.setText(String.valueOf(dmDashboard.getId()));
         holder.tvName.setText(dmDashboard.getName());
+        holder.tv_distance.setText(String.valueOf(new DecimalFormat("##.##").format(distance)) + " Km");
         Picasso.get()
                 .load("http://192.168.1.10/DolanKuy-backend/DolanKuy-backend/public/storage/dolankuy/"+ dmDashboard.getImage())
                 .into(holder.imageView);
@@ -56,6 +59,7 @@ public class AdapterDataDashboard extends RecyclerView.Adapter<AdapterDataDashbo
     public class HolderData extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView tvId;
         TextView tvName;
+        TextView tv_distance;
         Button detailBtn;
         ImageView imageView;
 
@@ -66,6 +70,7 @@ public class AdapterDataDashboard extends RecyclerView.Adapter<AdapterDataDashbo
             tvId = itemView.findViewById(R.id.idWisataDashboard);
             tvName = itemView.findViewById(R.id.nameWisataDashboard);
             detailBtn = itemView.findViewById(R.id.detailButton);
+            tv_distance = itemView.findViewById(R.id.distance_dashboard);
             imageView = itemView.findViewById(R.id.imageDashboard);
 
             detailBtn.setOnClickListener(this);
@@ -74,10 +79,12 @@ public class AdapterDataDashboard extends RecyclerView.Adapter<AdapterDataDashbo
         @Override
         public void onClick(View view) {
             String id = tvId.getText().toString();
+            String distance = tv_distance.getText().toString();
 
             Intent intent = new Intent(context, DetailListLocationsActivity.class);
             //intent.putExtra("imageDetail", R.drawable.singapore);
             intent.putExtra("id", id);
+            intent.putExtra("distance", distance);
             context.startActivity(intent);
         }
     }

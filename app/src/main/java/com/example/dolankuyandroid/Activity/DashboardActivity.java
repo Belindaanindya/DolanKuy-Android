@@ -1,11 +1,17 @@
 package com.example.dolankuyandroid.Activity;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -15,13 +21,22 @@ import com.example.dolankuyandroid.Fragment.DashboardFragment;
 import com.example.dolankuyandroid.Fragment.ListLocationsFragment;
 import com.example.dolankuyandroid.Fragment.ProfileFragment;
 import com.example.dolankuyandroid.R;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 public class DashboardActivity extends AppCompatActivity {
 
     private TextView textView;
     private Fragment selectedFragment = null;
-    private int tmp = 0;
+    private int tmp = 3;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,14 +45,26 @@ public class DashboardActivity extends AppCompatActivity {
 
         BottomNavigationView botNavView = findViewById(R.id.bottom_navigation);
         botNavView.setOnNavigationItemSelectedListener(navListener);
-        selectedFragment = new DashboardFragment();
+
+
+
+
+        selectedFragment = new ProfileFragment();
+
+
+
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frameLayout, selectedFragment);
         fragmentTransaction.commit();
+        botNavView.setSelectedItemId(R.id.profile_botNav);
 
         textView = findViewById(R.id.title);
-        textView.setText("Dashboard");
+        textView.setText("My Profile");
+
+    }
+
+    private void getLatLong() {
 
     }
 

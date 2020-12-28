@@ -10,18 +10,13 @@
     android:background="#FFFFFF"
     >
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+
+
 
         <com.synnapps.carouselview.CarouselView
             android:id="@+id/carouselView"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="220dp"
             app:fillColor="#FFFFFFFF"
             app:layout_constraintTop_toTopOf="parent"
             app:pageColor="#00000000"
@@ -32,33 +27,43 @@
 
         </com.synnapps.carouselview.CarouselView>
 
-        <LinearLayout
-            android:id="@+id/linearLayout1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+
+        <ScrollView
+            android:id="@+id/dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/carouselView"
+            android:layout_below="@+id/carouselView"
             >
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="15dp"
+
+            >
+
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycleViewData"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:listitem="@layout/card_dashboard" />
-            </LinearLayout>
 
-        </LinearLayout>
+        </RelativeLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+
+
+        </ScrollView>
+
+
+
+
+
+
+
 </RelativeLayout>

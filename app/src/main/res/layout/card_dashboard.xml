@@ -31,6 +31,16 @@
                 android:textSize="24sp"
                 android:visibility="gone" />
 
+            <TextView
+                android:id="@+id/distance_dashboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageDashboard"
+                android:layout_centerHorizontal="true"
+                android:text="id"
+                android:textSize="24sp"
+                android:visibility="gone" />
+
             <ImageView
                 android:id="@+id/imageDashboard"
                 android:layout_width="match_parent"
@@ -48,29 +58,42 @@
                 android:textSize="15sp"
                 android:visibility="gone"/>
 
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageDashboard"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                >
+
             <TextView
                 android:id="@+id/nameWisataDashboard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/descWisataDashboard"
-                android:layout_centerInParent="true"
-                android:layout_margin="2dp"
+
+
                 android:fontFamily="@font/roboto_regular"
 
                 android:text="Name"
                 android:textStyle="bold"
-                android:textSize="13sp" />
+                android:textSize="13dp" />
 
+            </RelativeLayout>
             <Button
                 android:id="@+id/detailButton"
-                android:layout_width="320dp"
+                android:layout_width="match_parent"
                 android:layout_centerHorizontal="true"
 
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
 
-                android:layout_marginTop="205dp"
+                android:layout_marginTop="215dp"
                 android:background="@color/orange"
                 android:text="Detail"
+                android:textSize="15dp"
                 android:clickable="true"
                 style="@style/Widget.MaterialComponents.Button.Icon"
 

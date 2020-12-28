@@ -106,10 +106,17 @@ public class CategoryFragment extends Fragment {
                     //Toast.makeText(CategoryActivity.this, "Berhasil Mendapat Respon", Toast.LENGTH_SHORT).show();
 
                     categoryListData = response.body().getCategory();
-                    idSPBU = Integer.toString(categoryListData.get(1).getId());
-                    idKuliner = Integer.toString(categoryListData.get(3).getId());
-                    idTempatIbadah = Integer.toString(categoryListData.get(2).getId());
-                    idMarket = Integer.toString(categoryListData.get(4).getId());
+                    for (int i = 0; i < categoryListData.size(); i++) {
+                        if (categoryListData.get(i).getName().equalsIgnoreCase("spbu")){
+                            idSPBU = Integer.toString(categoryListData.get(i).getId());
+                        } else if (categoryListData.get(i).getName().equalsIgnoreCase("kuliner")){
+                            idKuliner = Integer.toString(categoryListData.get(i).getId());
+                        } else if (categoryListData.get(i).getName().equalsIgnoreCase("tempat ibadah")){
+                            idTempatIbadah = Integer.toString(categoryListData.get(i).getId());
+                        } else if (categoryListData.get(i).getName().equalsIgnoreCase("market")){
+                            idMarket = Integer.toString(categoryListData.get(i).getId());
+                        }
+                    }
 
                 } else {
 

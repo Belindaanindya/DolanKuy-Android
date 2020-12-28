@@ -2,12 +2,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:orientation="vertical"
         >
 
@@ -26,7 +30,7 @@
 
         <TextView
             android:id="@+id/username_profile"
-            android:layout_width="280dp"
+            android:layout_width="wrap_content"
             android:layout_height="45dp"
             android:text="username"
             android:layout_below="@id/profile_image"
@@ -40,7 +44,7 @@
 
         <TextView
             android:id="@+id/email_profile"
-            android:layout_width="280dp"
+            android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:text="email"
             android:layout_below="@id/profile_image"
@@ -61,7 +65,6 @@
                 android:layout_width="350dp"
                 android:layout_height="45dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
                 android:background="@drawable/button_background"
                 android:fontFamily="@font/montserrat_bold"
                 android:text="Edit Profile"
@@ -81,6 +84,59 @@
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/bt_sign_in_profile"
+                android:layout_width="350dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Sign In"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/btn_changeEmail"
+                android:layout_width="350dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Change Email Address"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/btn_changePassword"
+                android:layout_width="350dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Change Password"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/btn_getLocation"
+                android:layout_width="350dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Get Location"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp" />
+
         </LinearLayout>
 
     </LinearLayout>

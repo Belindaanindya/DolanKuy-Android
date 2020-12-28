@@ -3,16 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_centerVertical="true"
+    android:layout_height="match_parent">
 
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_vertical"
+
+            >
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
@@ -21,7 +26,6 @@
             android:src="@drawable/avatar"
             app:civ_border_color="#707070"
             app:civ_border_width="2dp"
-            android:layout_marginTop="10dp"
             android:layout_gravity="center"/>
 
             <TextView
@@ -39,10 +43,11 @@
                 android:clickable="true"/>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -54,63 +59,27 @@
                     android:textColor="#000000"
                     android:textSize="15dp" />
 
+
+
                 <EditText
                     android:id="@+id/et_username"
                     android:layout_width="350dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/edit_text_background"
-                    android:gravity="center_horizontal"
                     android:inputType="textPersonName"
-                    android:textAlignment="center"
+
                     android:textSize="16dp" />
 
-                <TextView
-                    android:layout_width="135dp"
-                    android:layout_height="20dp"
-                    android:layout_below="@id/profile_image"
-                    android:layout_marginTop="10dp"
-                    android:text="Password"
-                    android:textColor="#000000"
-                    android:textSize="15dp" />
 
-                <EditText
-                    android:id="@+id/et_password"
-                    android:layout_width="350dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/edit_text_background"
-                    android:gravity="center_horizontal"
-                    android:inputType="textPassword"
-                    android:textAlignment="center"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:layout_width="135dp"
-                    android:layout_height="20dp"
-                    android:layout_below="@id/profile_image"
-                    android:layout_marginTop="10dp"
-                    android:text="Email"
-                    android:textColor="#000000"
-                    android:textSize="15dp" />
-
-                <EditText
-                    android:id="@+id/et_email"
-                    android:layout_width="350dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/edit_text_background"
-                    android:inputType="textEmailAddress"
-                    android:textSize="16dp" />
 
                 <Button
                     android:id="@+id/bt_saveProfile"
                     android:layout_width="350dp"
                     android:layout_height="50dp"
-                    android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/button_background"
-                    android:text="Simpan Perubahan"
+                    android:text="Save Profile"
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
                     android:textSize="18dp" />
@@ -118,5 +87,5 @@
 
         </LinearLayout>
 
-    </ScrollView>
+
 </RelativeLayout>
