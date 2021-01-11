@@ -4,6 +4,6 @@
         android:title="Deskripsi"/>
     <item
         android:id="@+id/galery_botNav"
-        android:title="Galery"/>
+        android:title="Galeri"/>
 
 </menu>

@@ -17,47 +17,7 @@
         android:background="@drawable/line_shape_corner">
     </SearchView>
 
-        <LinearLayout
-            android:layout_gravity="center"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/eventListWisataSearchBtn"
-                    style="@style/Widget.MaterialComponents.Button.TextButton"
-                    android:layout_width="100dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_height="wrap_content"
-                    android:text="Event"
-                    android:textColor="@color/black"
-                    android:textSize="20dp" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/wisataListWisataSearchBtn"
-                    style="@style/Widget.MaterialComponents.Button.TextButton"
-                    android:layout_alignParentRight="true"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="Wisata"
-                    android:textColor="@color/black"
-                    android:textSize="20dp" />
-            </RelativeLayout>
-
-        </LinearLayout>
-
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipe_wisata"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

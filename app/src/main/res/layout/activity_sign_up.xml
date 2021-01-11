@@ -68,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:ems="10"
-                    android:hint="Username"
+                    android:hint="Nama"
 
                     android:inputType="textPersonName" />
 
@@ -135,7 +135,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:ems="10"
-                    android:hint="Password"
+                    android:hint="Kata Sandi"
 
                     android:inputType="textPassword" />
 
@@ -154,7 +154,7 @@
             android:background="@drawable/button_bg"
             android:fontFamily="@font/montserrat_bold"
             android:padding="20dp"
-            android:text="Sign Up"
+            android:text="Daftar"
             android:textColor="#fff"
             android:textStyle="bold" />
 
@@ -170,7 +170,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="Already have an Account?"
+                android:text="Sudah punya akun ?"
                 android:textColor="@color/grey"
                 android:textStyle="bold" />
 
@@ -180,7 +180,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="Login"
+                android:text="Masuk"
                 android:textColor="@color/orange"
                 android:textStyle="bold" />
         </LinearLayout>

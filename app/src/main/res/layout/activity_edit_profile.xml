@@ -36,7 +36,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/montserrat_italic"
-                android:text="Edit Photo Profile"
+                android:text="Edit Foto Profil"
                 android:textColor="#000000"
                 android:textSize="15dp"
                 android:onClick="onClick"
@@ -55,7 +55,7 @@
                     android:layout_width="135dp"
                     android:layout_height="20dp"
                     android:layout_below="@id/profile_image"
-                    android:text="Username"
+                    android:text="Nama Pengguna"
                     android:textColor="#000000"
                     android:textSize="15dp" />
 
@@ -79,7 +79,7 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/button_background"
-                    android:text="Save Profile"
+                    android:text="Simpan"
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
                     android:textSize="18dp" />

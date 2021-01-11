@@ -103,7 +103,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:ems="10"
-                    android:hint="Password"
+                    android:hint="Kata Sandi"
 
                     android:inputType="textPassword" />
 
@@ -122,7 +122,7 @@
             android:background="@drawable/button_bg"
             android:fontFamily="@font/montserrat_bold"
             android:padding="20dp"
-            android:text="Sign In"
+            android:text="Masuk"
             android:textColor="#fff"
             android:textStyle="bold" />
 
@@ -138,7 +138,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:text="Don't have an Account?"
+                android:text="Tidak punya akun ?"
                 android:textColor="@color/grey"
                 android:textStyle="bold" />
 
@@ -148,7 +148,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="6dp"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="Register"
+                android:text="Daftar"
                 android:textColor="@color/orange"
                 android:textStyle="bold" />
 
