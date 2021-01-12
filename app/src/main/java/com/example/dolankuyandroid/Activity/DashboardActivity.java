@@ -1,6 +1,7 @@
 package com.example.dolankuyandroid.Activity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -36,6 +37,10 @@ public class DashboardActivity extends AppCompatActivity {
     private TextView textView;
     private Fragment selectedFragment = null;
     private int tmp = 3;
+    private Double userLat = 0D;
+    private Double userLong = 0D;
+    String a;
+    String b;
 
 
     @Override
@@ -55,10 +60,6 @@ public class DashboardActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.title);
         textView.setText("My Profile");
-
-    }
-
-    private void getLatLong() {
 
     }
 

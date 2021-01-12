@@ -105,43 +105,6 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void getLatLong() {
-
-        if (ActivityCompat.checkSelfPermission(LoginActivity.this,
-                Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
-
-            fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
-                @Override
-                public void onComplete(@NonNull Task<Location> task) {
-                    Location location = task.getResult();
-                    if (location != null) {
-                        Geocoder geocoder = new Geocoder(LoginActivity.this,
-                                Locale.getDefault());
-
-                        try {
-                            List<Address> addresses = geocoder.getFromLocation(
-                                    location.getLatitude(),
-                                    location.getLongitude(),
-                                    1
-                            );
-                            userLat = addresses.get(0).getLatitude();
-                            userLong = addresses.get(0).getLongitude();
-
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-            });
-
-        } else {
-
-            ActivityCompat.requestPermissions(LoginActivity.this,
-                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
-
-        }
-    }
-
     @Override
     protected void onStart() {
         super.onStart();
