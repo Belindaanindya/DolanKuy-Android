@@ -39,6 +39,7 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
 
     private Button bt_signIn;
+    private Button bt_aboutus;
     private TextView tv_register;
     private EditText et_email;
     private EditText et_password;
@@ -64,6 +65,7 @@ public class LoginActivity extends AppCompatActivity {
             tv_skip = findViewById(R.id.tv_skip);
             et_email = findViewById(R.id.signIn_email);
             et_password = findViewById(R.id.signIn_password);
+            bt_aboutus = findViewById(R.id.bt_aboutUs);
             fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
             progressBar = findViewById(R.id.pb_signIn);
@@ -88,6 +90,14 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     onRegister();
+                }
+            });
+
+            bt_aboutus.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(LoginActivity.this, AboutActivity.class);
+                    startActivity(intent);
                 }
             });
 

@@ -67,7 +67,7 @@
                 android:layout_gravity="center"
                 android:background="@drawable/button_background"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="Edit Profil"
+                android:text="Ubah Profil"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:textSize="18dp" />
@@ -93,7 +93,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_background"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="Sign In"
+                android:text="Masuk"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:textSize="18dp" />

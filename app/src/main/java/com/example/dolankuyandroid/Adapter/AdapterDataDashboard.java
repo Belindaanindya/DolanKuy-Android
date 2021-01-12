@@ -47,7 +47,7 @@ public class AdapterDataDashboard extends RecyclerView.Adapter<AdapterDataDashbo
         holder.tvName.setText(dmDashboard.getName());
         holder.tv_distance.setText(String.valueOf(new DecimalFormat("##.##").format(distance)) + " Km");
         Picasso.get()
-                .load("http://192.168.1.7/DolanKuy/DolanKuy-backend/public/storage/dolankuy/"+ dmDashboard.getImage())
+                .load("http://192.168.1.5/DolanKuy/DolanKuy-backend/public/storage/dolankuy/"+ dmDashboard.getImage())
                 .into(holder.imageView);
     }
 

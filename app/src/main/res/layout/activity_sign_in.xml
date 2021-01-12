@@ -28,21 +28,19 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="Sign In"
+        android:text="Masuk"
         android:textColor="#000"
         android:textSize="25dp" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/login_bg"
         android:orientation="vertical"
         android:paddingLeft="20dp"
         android:paddingTop="0dp"
         android:paddingRight="20dp">
-
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -127,7 +125,7 @@
             android:textStyle="bold" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
@@ -158,14 +156,16 @@
 
         <TextView
             android:id="@+id/tv_skip"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_gravity="center"
             android:textSize="20dp"
+            android:background="@color/orange"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Skip ?"
-            android:textColor="@color/orange"
+            android:text="Lewati"
+            android:textColor="@color/white"
+            android:padding="10dp"
             android:textStyle="bold" />
 
         <ProgressBar
@@ -174,10 +174,28 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginLeft="150dp"
-            android:visibility="invisible"/>
+            android:visibility="invisible" />
 
     </LinearLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/bt_aboutUs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:background="@color/orange"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Tentang Kami"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" />
+    </RelativeLayout>
 
 
 </LinearLayout>

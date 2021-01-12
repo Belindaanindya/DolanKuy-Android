@@ -46,13 +46,7 @@ public class DashboardActivity extends AppCompatActivity {
         BottomNavigationView botNavView = findViewById(R.id.bottom_navigation);
         botNavView.setOnNavigationItemSelectedListener(navListener);
 
-
-
-
         selectedFragment = new ProfileFragment();
-
-
-
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frameLayout, selectedFragment);
@@ -78,7 +72,7 @@ public class DashboardActivity extends AppCompatActivity {
                     if(tmp != 0) {
                         selectedFragment = new DashboardFragment();
                         overridePendingTransition(0, 0);
-                        textView.setText("Dashboard");
+                        textView.setText("Beranda");
                         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
                                 selectedFragment).commit();
                         tmp = 0;
@@ -90,7 +84,7 @@ public class DashboardActivity extends AppCompatActivity {
                     if(tmp != 1) {
                         selectedFragment = new ListLocationsFragment();
                         overridePendingTransition(0, 0);
-                        textView.setText("List Wisata");
+                        textView.setText("Daftar Wisata");
                         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
                                 selectedFragment).commit();
                         tmp = 1;
@@ -114,7 +108,7 @@ public class DashboardActivity extends AppCompatActivity {
                     if(tmp != 3) {
                         selectedFragment = new ProfileFragment();
                         overridePendingTransition(0, 0);
-                        textView.setText("My Profile");
+                        textView.setText("Profil");
                         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
                                 selectedFragment).commit();
                         tmp = 3;
