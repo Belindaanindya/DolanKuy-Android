@@ -63,6 +63,15 @@ public class ProfileFragment extends Fragment {
 
             getDetailUser();
 
+            btn_getLocation.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.frameLayout, new UserLocationFragment());
+                    fragmentTransaction.commit();
+                }
+            });
+
             btn_logout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -166,6 +175,9 @@ public class ProfileFragment extends Fragment {
                         btn_logout.setVisibility(View.GONE);
                         btn_sign_in_profile.setVisibility(View.VISIBLE);
                         btn_editProfile.setVisibility(View.GONE);
+                        btn_getLocation.setVisibility(View.GONE);
+                        btn_changePassword.setVisibility(View.GONE);
+                        btn_changeEmail.setVisibility(View.GONE);
                         Toast.makeText(view.getContext(), status, Toast.LENGTH_SHORT).show();
                     }
 

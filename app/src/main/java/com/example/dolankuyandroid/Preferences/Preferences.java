@@ -6,39 +6,24 @@ import android.preference.PreferenceManager;
 
 public class Preferences {
 
-
-    static final String KEY_USERNAME = "false";
     static final String KEY_STATUS = "false";
-    static final String KEY_PASSWORD = "";
     static final String KEY_TOKEN = "";
+    static final String KEY_LATITUDE = "0";
+
 
     private static SharedPreferences getSharedPreference(Context context){
         return PreferenceManager.getDefaultSharedPreferences(context);
     }
 
-
-    public static void setPasswordUser(Context context, String password){
+    public static void setKeyLatitude(Context context, String latitude){
         SharedPreferences.Editor editor = getSharedPreference(context).edit();
-        editor.putString(KEY_PASSWORD, password);
+        editor.putString(KEY_LATITUDE, latitude);
         editor.apply();
     }
 
-    public static String getPasswordUser(Context context){
-        return getSharedPreference(context).getString(KEY_PASSWORD, "");
+    public static String getKeyLatitude(Context context){
+        return getSharedPreference(context).getString(KEY_LATITUDE,"0");
     }
-
-
-
-    public static void setLoggedInUser(Context context, String username){
-        SharedPreferences.Editor editor = getSharedPreference(context).edit();
-        editor.putString(KEY_USERNAME, username);
-        editor.apply();
-    }
-
-    public static String getLoggedInUser(Context context){
-        return getSharedPreference(context).getString(KEY_USERNAME,"");
-    }
-
 
     public static void setStatus(Context context, String status){
         SharedPreferences.Editor editor = getSharedPreference(context).edit();
@@ -62,10 +47,9 @@ public class Preferences {
 
     public static void clearLoggedInUser (Context context){
         SharedPreferences.Editor editor = getSharedPreference(context).edit();
-        editor.remove(KEY_USERNAME);
         editor.remove(KEY_STATUS);
         editor.remove(KEY_TOKEN);
-        editor.remove(KEY_PASSWORD);
+        editor.remove(KEY_LATITUDE);
         editor.apply();
     }
 }

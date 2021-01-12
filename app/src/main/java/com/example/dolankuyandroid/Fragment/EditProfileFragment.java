@@ -24,6 +24,8 @@ import com.example.dolankuyandroid.Preferences.Preferences;
 import com.example.dolankuyandroid.R;
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -41,6 +43,7 @@ public class EditProfileFragment extends Fragment {
     private TextView tv_editProfile;
     private String image;
     private String username="";
+    File file;
 
     private User credentials;
 
@@ -146,6 +149,7 @@ public class EditProfileFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (resultCode == RESULT_OK && requestCode == IMAGE_PICK_CODE) {
             civ_editProfile.setImageURI(data.getData());
+            file = new File(data.getData().getPath());
         }
     }
 }

@@ -43,8 +43,9 @@ public class AcomodationFragment extends Fragment {
     private SwipeRefreshLayout swipeRefreshLayout;
     private String tag = "";
     private String token="";
-    private Double userLat = -7.368298;
-    private Double userLong = 112.7558989;
+    private Double userLat = 0D;
+    private Double userLong = 0D;
+
 
     @Nullable
     @Override
@@ -61,6 +62,24 @@ public class AcomodationFragment extends Fragment {
         rvData.setLayoutManager(lmData);
         tag = getTag();
         token = Preferences.getKeyToken(view.getContext());
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(Preferences.getKeyLatitude(view.getContext()));
+
+        if (!Preferences.getKeyLatitude(view.getContext()).equals("0")) {
+            int index = stringBuilder.indexOf("&");
+            StringBuilder stringBuilder1 = new StringBuilder();
+            stringBuilder1.append(Preferences.getKeyLatitude(view.getContext()));
+
+            String lat = String.valueOf(stringBuilder.delete(index, stringBuilder.length()));
+            String longi = String.valueOf(stringBuilder1.delete(0, index + 1));
+
+            System.out.println("Latitude : " + lat);
+            System.out.println("Longitude : " + longi);
+
+            userLat = Double.valueOf(lat);
+            userLong = Double.valueOf(longi);
+        }
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
