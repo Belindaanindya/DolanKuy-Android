@@ -39,6 +39,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".Activity.DetailListLocationsActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".Activity.LocationActivity"
+            android:screenOrientation="portrait"/>
 
 
     </application>
