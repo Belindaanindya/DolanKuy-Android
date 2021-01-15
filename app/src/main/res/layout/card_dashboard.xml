@@ -11,15 +11,13 @@
         android:layout_height="250dp"
         android:layout_margin="5dp"
         android:background="@drawable/card_radius"
+        app:cardCornerRadius="10dp"
         app:cardElevation="0dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/card_radius"
             android:elevation="0dp">
-
-
             <TextView
                 android:id="@+id/idWisataDashboard"
                 android:layout_width="wrap_content"
@@ -40,13 +38,18 @@
                 android:textSize="24sp"
                 android:visibility="gone" />
 
-            <ImageView
+            <com.makeramen.roundedimageview.RoundedImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/imageDashboard"
-                android:layout_width="match_parent"
+                android:src="@drawable/singapore"
                 android:layout_height="130dp"
+                android:layout_width="match_parent"
                 android:scaleType="fitXY"
                 android:layout_centerHorizontal="true"
-                app:srcCompat="@drawable/singapore" />
+                app:riv_corner_radius_top_left="8dp"
+                app:riv_corner_radius_top_right="8dp"
+                app:riv_corner_radius_bottom_left="0dp"
+                app:riv_corner_radius_bottom_right="0dp"/>
 
             <TextView
                 android:id="@+id/descWisataDashboard"
@@ -66,20 +69,17 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                >
+                android:layout_marginRight="2dp">
 
-            <TextView
-                android:id="@+id/nameWisataDashboard"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-
-                android:fontFamily="@font/roboto_regular"
-
-                android:text="Name"
-                android:textStyle="bold"
-                android:textSize="13dp" />
+                <TextView
+                    android:id="@+id/nameWisataDashboard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="Name"
+                    android:textStyle="bold"
+                    android:textSize="13dp"
+                    android:textColor="@color/black"/>
 
             </RelativeLayout>
             <Button
@@ -87,15 +87,14 @@
                 android:layout_width="match_parent"
                 android:layout_centerHorizontal="true"
                 android:layout_height="40dp"
-                android:layout_marginTop="215dp"
-                android:background="@color/orange"
-                android:text="Rincian"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/button_background_dashboard"
+                android:text="Detail"
                 android:textSize="15dp"
                 android:clickable="true"
                 style="@style/Widget.MaterialComponents.Button.Icon"
                 android:textColor="@color/white"
-                android:fontFamily="@font/roboto_bold"/>
-
+                android:fontFamily="@font/montserrat_semi_bold"/>
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
