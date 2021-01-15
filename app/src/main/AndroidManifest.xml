@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.dolankuyandroid">
+    package="com.DolanKuy.dolankuyandroid">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
@@ -19,7 +19,7 @@
 
         </meta-data>
 
-        <activity android:name=".Activity.SplashScreen"
+        <activity android:name="com.DolanKuy.dolankuyandroid.Activity.SplashScreen"
             android:screenOrientation="portrait"
             >
             <intent-filter>
@@ -28,19 +28,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.WelcomeActivity"
+        <activity android:name="com.DolanKuy.dolankuyandroid.Activity.WelcomeActivity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activity.LoginActivity"
+        <activity android:name="com.DolanKuy.dolankuyandroid.Activity.LoginActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Activity.RegisterActivity"
+        <activity android:name="com.DolanKuy.dolankuyandroid.Activity.RegisterActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Activity.DashboardActivity"
+        <activity android:name="com.DolanKuy.dolankuyandroid.Activity.DashboardActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Activity.DetailListLocationsActivity"
+        <activity android:name="com.DolanKuy.dolankuyandroid.Activity.DetailListLocationsActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Activity.LocationActivity"
-            android:screenOrientation="portrait"/>
+        <activity android:name="com.DolanKuy.dolankuyandroid.Activity.AboutActivity" />
 
 
     </application>
