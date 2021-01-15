@@ -172,7 +172,7 @@ public class DetailListLocationsActivity extends AppCompatActivity {
                 tvTitle.setText(detailLocations.getName());
                 tvDistance.setText(distance);
                 Picasso.get()
-                        .load("http://api.dolankuy.me/storage/dolankuy/"+ detailLocations.getImage())
+                        .load("http://api.dolankuy.me/storage/"+ detailLocations.getImage())
                         .into(ivDetailImage);
 //                tvDescription = view.findViewById(R.id.tv_description);
 //                tvContact = view.findViewById(R.id.tv_contact);

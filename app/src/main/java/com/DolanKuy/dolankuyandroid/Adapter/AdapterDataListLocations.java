@@ -54,7 +54,7 @@ public class AdapterDataListLocations extends RecyclerView.Adapter<AdapterDataLi
         holder.distanceListWisata1.setText(" "+ String.valueOf(new DecimalFormat("##.##").format(distance)) + " Km ");
         holder.locationListWisataBtn1.setText(dmDashboard.getAddress());
         Picasso.get()
-                .load("http://api.dolankuy.me/storage/dolankuy/"+ dmDashboard.getImage())
+                .load("http://api.dolankuy.me/storage/"+ dmDashboard.getImage())
                 .into(holder.imageView);
     }
 
@@ -116,7 +116,7 @@ public class AdapterDataListLocations extends RecyclerView.Adapter<AdapterDataLi
             nameListWisata1 = itemView.findViewById(R.id.nameListWisata1);
             distanceListWisata1 = itemView.findViewById(R.id.distanceListWisata1);
             locationListWisataBtn1 = itemView.findViewById(R.id.locationListWisataBtn1);
-            imageView = itemView.findViewById(R.id.imgListWisata1);
+            imageView = itemView.findViewById(R.id.imageView1);
 
             locationListWisataBtn1.setOnClickListener(this);
 

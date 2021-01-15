@@ -50,7 +50,7 @@ public class AdapterListAcomodation extends RecyclerView.Adapter<AdapterListAcom
         holder.nameListAcomodation.setText(dmDashboard.getName());
         holder.tv_distance.setText(String.valueOf(new DecimalFormat("##.##").format(dmDashboard.getDistance()))+ " Km");
         Picasso.get()
-                .load("http://api.dolankuy.me/storage/dolankuy/"+ dmDashboard.getImage())
+                .load("http://api.dolankuy.me/storage/"+ dmDashboard.getImage())
                 .into(holder.imageView);
     }
 
