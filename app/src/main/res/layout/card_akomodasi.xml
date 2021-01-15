@@ -10,14 +10,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:layout_weight="1"
-        android:background="@drawable/card_radius"
+        app:cardCornerRadius="10dp"
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="205dp"
-            android:layout_margin="10dp">
 
             <TextView
                 android:id="@+id/idAkomodasi"
@@ -28,36 +23,41 @@
                 android:textSize="20dp"
                 android:visibility="gone" />
 
-            <ImageView
+            <com.makeramen.roundedimageview.RoundedImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/imageAkomodasi"
+                android:src="@drawable/sate"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/sate" />
+                android:layout_height="205dp"
+                android:scaleType="fitXY"
+                android:layout_centerHorizontal="true"
+                app:riv_corner_radius="10dp"/>
 
             <TextView
                 android:id="@+id/distance_akomodasi"
                 android:layout_width="wrap_content"
                 android:padding="10dp"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
                 android:layout_alignParentTop="true"
-                android:background="@drawable/gradation_background_black"
+                android:background="@drawable/gradasi_jarak"
+                android:fontFamily="@font/montserrat_regular"
                 android:text="30 Km"
                 android:textColor="@color/white"
-                android:textSize="15dp" />
+                android:textSize="14dp" />
 
             <TextView
                 android:id="@+id/nameAkomodasi"
                 android:layout_width="match_parent"
                 android:padding="10dp"
                 android:layout_height="50dp"
-                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
                 android:background="@drawable/gradation_background_black"
+                android:fontFamily="@font/montserrat_regular"
                 android:text="Nama Tempat"
                 android:textColor="@color/white"
-                android:textSize="20dp" />
-        </RelativeLayout>
+                android:textSize="18dp" />
+
 
     </androidx.cardview.widget.CardView>
 
