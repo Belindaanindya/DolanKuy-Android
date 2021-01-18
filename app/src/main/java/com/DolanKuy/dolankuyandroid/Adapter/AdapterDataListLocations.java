@@ -104,7 +104,7 @@ public class AdapterDataListLocations extends RecyclerView.Adapter<AdapterDataLi
         TextView nameListWisata1;
         TextView distanceListWisata1;
         TextView idListWisata1;
-        Button locationListWisataBtn1;
+        TextView locationListWisataBtn1;
         ImageView imageView;
 
 

@@ -16,39 +16,41 @@
             android:layout_marginHorizontal="10dp"
             app:cardCornerRadius="8dp"
             app:cardElevation="0dp">
+
             <LinearLayout
-                android:layout_gravity="center_vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
                 android:orientation="horizontal">
+
                 <RelativeLayout
                     android:layout_width="150dp"
                     android:layout_height="wrap_content">
 
-                    <com.makeramen.roundedimageview.RoundedImageView
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                    <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:id="@+id/imageView1"
-                        android:src="@drawable/list_wisata_picture"
-                        android:layout_height="120dp"
                         android:layout_width="match_parent"
+                        android:layout_height="150dp"
                         android:scaleType="fitXY"
+                        android:src="@drawable/list_wisata_picture"
                         app:riv_corner_radius="8dp"
                         tools:ignore="MissingClass" />
 
                     <TextView
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
-                        android:background="@color/orange"
-                        android:text="4.5"
-                        android:visibility="gone"
-                        android:textAlignment="center"
+                        android:layout_marginLeft="135dp"
                         android:layout_marginTop="118dp"
+                        android:background="@color/orange"
+                        android:gravity="center_horizontal"
+                        android:text="4.5"
+                        android:textAlignment="center"
                         android:textColor="@color/white"
                         android:textSize="16dp"
-                        android:layout_marginLeft="135dp"
                         android:textStyle="bold"
-                        android:gravity="center_horizontal" />
+                        android:visibility="gone" />
                 </RelativeLayout>
+
                 <RelativeLayout
                     android:id="@+id/relatif"
                     android:layout_width="wrap_content"
@@ -56,64 +58,76 @@
                     android:layout_marginVertical="5dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="5dp">
-                        <LinearLayout
+
+                    <LinearLayout
+                        android:id="@+id/judul_listwisata"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true">
+
+                        <TextView
+                            android:id="@+id/idListWisata1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentTop="true">
-                            <TextView
-                                android:id="@+id/idListWisata1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="id"
-                                android:visibility="gone" />
-                            <TextView
-                                android:id="@+id/nameListWisata1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Wisata Taman Sari, Mengkhayalkan Para Putri"
-                                android:textSize="6pt"
-                                android:fontFamily="@font/montserrat_medium"
-                                android:textColor="#000000"/>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:id="@+id/layout_lokasi"
+                            android:text="id"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/nameListWisata1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="63dp"
-                            android:orientation="horizontal">
-                            <ImageButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentLeft="true"
-                                android:layout_below="@id/nameListWisata1"
-                                android:background="@android:color/transparent"
-                                android:gravity="center_vertical"
-                                android:src="@drawable/ic_map_1"/>
-                            <TextView
-                                android:id="@+id/locationListWisataBtn1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="3dp"
-                                android:text="Patehan, Jogja"
-                                android:textAllCaps="false"
-                                android:textColor="@color/black"
-                                android:fontFamily="@font/montserrat_medium"
-                                android:textSize="6pt" />
-                        </LinearLayout>
-                        <LinearLayout
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Wisata Taman Sari, Mengkhayalkan Para Putri"
+                            android:textColor="#000000"
+                            android:textSize="6pt" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_lokasi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/judul_listwisata"
+                        android:orientation="horizontal">
+
+                        <ImageButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentBottom="true"
-                            android:orientation="horizontal">
-                            <TextView
-                                android:id="@+id/distanceListWisata1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/montserrat_medium"
-                                android:text="4,5 Km"
-                                android:textColor="@color/black"
-                                android:textSize="6pt" />
-                        </LinearLayout>
+                            android:layout_below="@id/nameListWisata1"
+                            android:layout_alignParentLeft="true"
+                            android:background="@android:color/transparent"
+                            android:gravity="center_vertical"
+                            android:src="@drawable/ic_map_1" />
+
+                        <TextView
+                            android:id="@+id/locationListWisataBtn1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Patehan, Jogja"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black"
+                            android:textSize="6pt" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/layout_lokasi"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/distanceListWisata1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="4,5 Km"
+                            android:textColor="@color/black"
+                            android:textSize="6pt" />
+                    </LinearLayout>
                 </RelativeLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
